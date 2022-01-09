@@ -1,4 +1,4 @@
-# Model Prective Traading
+# Model Prective Trading
 
 A kind of model predictive control to analyze market trends. 
 
