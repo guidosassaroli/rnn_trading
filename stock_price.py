@@ -32,11 +32,12 @@ for x in range(prediction_days, len(scaled_data)):
 x_train, y_train = np.array(x_train), np.array(y_train)
 x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
 
-# Build The Model 
+# Build The Model
 
+#create squential model (= layer-by-layer)
 model = Sequential()
-
-model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1], 1)))  #we are now using 50 layers, but if we use more we can risk to overfit 
+#LSTM = Long short-term memory for RNN for time series prediction 
+model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1], 1)))  #we are now using 50 layers, if we use more we can risk to overfit 
 model.add(Dropout(0.2))
 model.add(LSTM(units=50, return_sequences=True))  
 model.add(Dropout(0.2))
@@ -44,6 +45,8 @@ model.add(LSTM(units=50))
 model.add(Dropout(0.2))
 model.add(Dense(units=1)) # Prediction of the next closing value 
 
+#Optimizer: Adam algorithm implementation
+#Loss: computes the mean of squares of errors between labels and predictions.
 model.compile(optimizer='adam', loss='mean_squared_error')
 model.fit(x_train, y_train, epochs=25, batch_size=32)
 
