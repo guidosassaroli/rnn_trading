@@ -1,4 +1,6 @@
-# modelprectivetrading
+# Model Prective Traading
+
+A kind of model predictive control to analyze market trends. 
 
 ```bash
 pip install numpy 
