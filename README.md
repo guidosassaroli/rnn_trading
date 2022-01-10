@@ -1,6 +1,6 @@
 # Model Prective Trading
 
-A kind of model predictive control to analyze market trends. 
+RNN for time series prediction in order to analyze market trends. 
 
 ```bash
 pip install numpy 
