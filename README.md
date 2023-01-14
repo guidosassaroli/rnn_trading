@@ -1,4 +1,4 @@
-# Model Prective Trading
+# Prective Trading
 
 RNN for time series prediction in order to analyze market trends. 
 
